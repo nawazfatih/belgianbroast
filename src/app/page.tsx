@@ -101,7 +101,7 @@ Message: ${form.message}`;
           <img
             src={restaurant.heroImage}
             alt={restaurant.name}
-            className="h-[430px] w-full object-cover"
+           className="h-auto w-full object-contain"
           />
         </div>
       </section>
