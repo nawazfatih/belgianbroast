@@ -97,11 +97,11 @@ Message: ${form.message}`;
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-zinc-950 shadow-2xl">
+       <div className="overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-zinc-950 shadow-2xl flex items-center justify-center">
           <img
             src={restaurant.heroImage}
             alt={restaurant.name}
-           className="h-auto w-full object-contain"
+            className="h-[250px] md:h-[430px] w-full object-contain md:object-cover"
           />
         </div>
       </section>
