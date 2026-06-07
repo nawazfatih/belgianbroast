@@ -40,9 +40,10 @@ Message: ${form.message}`;
 
           <nav className="hidden gap-5 text-sm font-semibold text-white/80 md:flex">
             <a href="#menu">Menu</a>
-            <a href="#booking">Booking</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
+<a href="#why-choose">Why Choose Us</a>
+<a href="#booking">Booking</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
           </nav>
 
           <a
@@ -178,6 +179,85 @@ Message: ${form.message}`;
         </div>
       </section>
 
+<section id="why-choose" className="bg-zinc-950 px-6 py-14">
+        <div className="mx-auto max-w-6xl">
+          <p className="font-bold text-yellow-500">Why choose us</p>
+          <h2 className="mt-2 text-4xl font-black">
+            Why Choose Belgian Broast?
+          </h2>
+          <p className="mt-4 max-w-3xl text-white/60">
+            More than just great food — Belgian Broast offers premium taste,
+            peaceful ambience, indoor and outdoor dining, and memorable moments
+            for families, friends and food lovers in Rampur.
+          </p>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Signature Broast & Premium Taste",
+                image: "/restaurant-images/broast-chicken.jpg",
+                description:
+                  "Enjoy crispy broast chicken, burgers, pizzas, wraps and more, prepared with care for a rich and memorable taste.",
+              },
+              {
+                title: "Peaceful Garden Ambience",
+                image: "/restaurant-images/gallery-1.jpg",
+                description:
+                  "Relax in a calm outdoor garden-style environment that gives a peaceful and refreshing dining experience.",
+              },
+              {
+                title: "Indoor & Outdoor Seating",
+                image: "/restaurant-images/gallery-2.jpg",
+                description:
+                  "Choose comfortable indoor dining or open-air outdoor seating based on your mood and occasion.",
+              },
+              {
+                title: "Perfect for Families",
+                image: "/restaurant-images/gallery-3.jpg",
+                description:
+                  "A welcoming place for family dinners, casual outings, celebrations and quality time with loved ones.",
+              },
+              {
+                title: "Affordable Dining Experience",
+                image: "/restaurant-images/zinger-combo.jpg",
+                description:
+                  "Enjoy delicious food, comfortable seating and good service with great value for money.",
+              },
+              {
+                title: "More Than Just a Restaurant",
+                image: "/restaurant-images/hero-restaurant.jpg",
+                description:
+                  "Belgian Broast is a place to enjoy food, peace and memories with family, friends and loved ones.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="group relative min-h-[260px] overflow-hidden rounded-3xl border border-yellow-500/20 shadow-xl"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                />
+
+                <div className="absolute inset-0 bg-black/65" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
+
+                <div className="relative z-10 flex h-full min-h-[260px] flex-col justify-end p-6">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500 text-xl font-black text-black shadow-lg">
+                    ✓
+                  </div>
+
+                  <h3 className="text-xl font-black">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/75">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <section id="booking" className="bg-zinc-950 px-6 py-14">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
           <div>
