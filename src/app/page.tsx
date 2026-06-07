@@ -6,10 +6,7 @@ import { restaurant } from "./restaurantData";
 export default function RestaurantTemplatePage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredMenu =
-    selectedCategory === "All"
-      ? restaurant.menu
-      : restaurant.menu.filter((item) => item.category === selectedCategory);
+  const filteredMenu = restaurant.menu;
 
   const [form, setForm] = useState({
     name: "",
