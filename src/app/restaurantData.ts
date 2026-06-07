@@ -15,7 +15,7 @@ export const restaurant = {
   phone: "8868880002",
   whatsapp: "8868880002",
   email: "info@belgianbroast.com",
-  hours: "Mon - Sun : 11:00 AM - 11:30 PM",
+  hours: "Mon - Sun : 12:30 PM - 11:00 PM",
 
   theme: {
     primary: "bg-black",

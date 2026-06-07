@@ -4,6 +4,15 @@ import { useState } from "react";
 import { restaurant } from "./restaurantData";
 
 export default function RestaurantTemplatePage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredMenu =
+    selectedCategory === "All"
+      ? restaurant.menu
+      : restaurant.menu.filter(
+          (item) => item.category === selectedCategory
+        );
+
   const [form, setForm] = useState({
     name: "",
     mobile: "",
@@ -25,25 +34,31 @@ Message: ${form.message}`;
     <main className="min-h-screen bg-black text-white">
       <header className="sticky top-0 z-50 border-b border-yellow-500/20 bg-black/95 px-6 py-4 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
-          <div className="flex items-center gap-no">
-          <img
-  src="/restaurant-images/logo.png"
-  alt={restaurant.name}
-  className="h-24 w-auto object-contain"
- />
+
+          <div className="flex items-center gap-3">
+            <img
+              src="/restaurant-images/logo.png"
+              alt={restaurant.name}
+              className="h-24 w-auto object-contain"
+            />
+
             <div>
-              <h1 className="text-2xl font-black md:text-4xl leading-none">
+              <h1 className="text-2xl font-black leading-none md:text-4xl">
                 {restaurant.name}
               </h1>
+
+              <p className="mt-1 text-sm font-medium text-yellow-500 md:text-base">
+                Luxury Family Restaurant • Rampur
+              </p>
             </div>
           </div>
 
           <nav className="hidden gap-5 text-sm font-semibold text-white/80 md:flex">
             <a href="#menu">Menu</a>
-<a href="#why-choose">Why Choose Us</a>
-<a href="#booking">Booking</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+            <a href="#why-choose">Why Choose Us</a>
+            <a href="#booking">Booking</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
           </nav>
 
           <a
@@ -57,16 +72,23 @@ Message: ${form.message}`;
 
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-2 md:items-center">
         <div>
-          <p className="mb-4 inline-block rounded-full border border-yellow-500/40 px-4 py-2 text-sm font-bold text-yellow-500">
-            Dark Luxury Restaurant • {restaurant.city}
-          </p>
+          <div className="mb-8 max-w-2xl rounded-3xl border border-yellow-500/20 bg-white/[0.03] p-5 shadow-xl">
+  <p className="mb-3 text-sm font-bold uppercase tracking-[0.3em] text-yellow-500">
+    Welcome to Belgian Broast
+  </p>
 
+  <p className="text-base leading-7 text-white/75 md:text-lg">
+    A place where families connect, friends gather, and every meal becomes a
+    memorable experience. Enjoy fresh food, warm hospitality, and a peaceful
+    dining atmosphere in the heart of Rampur.
+  </p>
+</div>
           <h2 className="text-5xl font-black leading-tight md:text-7xl">
-           Crispy • Flavorful • Unforgettable Taste
+            Crispy • Flavorful • Unforgettable Taste
           </h2>
 
           <p className="mt-5 text-lg text-white/70">
-            Belgian Broast special chicken, burgers, pizza, Chinese food, beverages and premium family dining experience. Book
+            Belgian Broast special chicken, burgers, pizza, beverages and premium family dining experience. Book
             your table or order directly on WhatsApp.
           </p>
 
@@ -86,7 +108,7 @@ Message: ${form.message}`;
           </div>
 
           <div className="mt-8 grid grid-cols-3 gap-3">
-            {["Fresh Food", "Family Dining", "Fast Service"].map((item) => (
+            {["Fresh Food", "Family Dining", "Fast Service", "100% Halal"].map((item) => (
               <div
                 key={item}
                 className="rounded-2xl border border-yellow-500/20 bg-white/5 p-4 text-center"
@@ -102,7 +124,7 @@ Message: ${form.message}`;
           <img
             src={restaurant.heroImage}
             alt={restaurant.name}
-            className="h-[250px] md:h-[430px] w-full object-contain md:object-cover"
+            className="h-[280px] md:h-[500px] w-full object-contain"
           />
         </div>
       </section>
@@ -127,19 +149,24 @@ Message: ${form.message}`;
           <p className="font-bold text-yellow-500">Our food menu</p>
           <h2 className="mt-2 text-4xl font-black">Popular Dishes</h2>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            {restaurant.categories.map((category) => (
-              <span
-                key={category}
-                className="rounded-full border border-yellow-500/30 px-4 py-2 text-sm text-white/80"
-              >
-                {category}
-              </span>
-            ))}
-          </div>
+<div className="mt-6 flex gap-3 overflow-x-auto pb-3">
+  {restaurant.categories.map((category) => (
+    <button
+      key={category}
+      onClick={() => setSelectedCategory(category)}
+      className={`whitespace-nowrap rounded-full border px-5 py-2 text-sm font-bold transition ${
+        selectedCategory === category
+          ? "border-yellow-500 bg-yellow-500 text-black"
+          : "border-yellow-500/30 bg-black text-white/80 hover:bg-yellow-500 hover:text-black"
+      }`}
+    >
+      {category}
+    </button>
+  ))}
+</div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {restaurant.menu.map((item) => (
+            {filteredMenu.map((item) => (
               <div
                 key={item.name}
                 className="overflow-hidden rounded-3xl border border-yellow-500/20 bg-zinc-950 shadow-xl"
