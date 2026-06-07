@@ -9,9 +9,7 @@ export default function RestaurantTemplatePage() {
   const filteredMenu =
     selectedCategory === "All"
       ? restaurant.menu
-      : restaurant.menu.filter(
-          (item) => item.category === selectedCategory
-        );
+      : restaurant.menu.filter((item) => item.category === selectedCategory);
 
   const [form, setForm] = useState({
     name: "",
@@ -34,7 +32,6 @@ Message: ${form.message}`;
     <main className="min-h-screen bg-black text-white">
       <header className="sticky top-0 z-50 border-b border-yellow-500/20 bg-black/95 px-6 py-4 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
-
           <div className="flex items-center gap-3">
             <img
               src="/restaurant-images/logo.png"
@@ -72,22 +69,19 @@ Message: ${form.message}`;
 
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-2 md:items-center">
         <div>
-          <div className="mb-8 max-w-2xl rounded-3xl border border-yellow-500/20 bg-white/[0.03] p-5 shadow-xl">
-  <p className="mb-3 text-sm font-bold uppercase tracking-[0.3em] text-yellow-500">
-    Welcome to Belgian Broast
-  </p>
+          <p className="mb-6 text-sm font-semibold text-yellow-500 md:text-base">
+            Welcome to Belgian Broast • Where Fresh Food, Warm Hospitality &
+            Peaceful Dining Create Memorable Experiences
+          </p>
 
-  <p className="mb-6 text-sm font-semibold text-yellow-500 md:text-base">
-  Welcome to Belgian Broast • Where Fresh Food, Warm Hospitality & Peaceful
-  Dining Create Memorable Experiences
-</p>
           <h2 className="text-5xl font-black leading-tight md:text-7xl">
             Crispy • Flavorful • Unforgettable Taste
           </h2>
 
           <p className="mt-5 text-lg text-white/70">
-            Belgian Broast special chicken, burgers, pizza, beverages and premium family dining experience. Book
-            your table or order directly on WhatsApp.
+            Enjoy signature broast chicken, burgers, pizza, wraps, fries,
+            shakes, beverages and a premium family dining experience. Book your
+            table or order directly on WhatsApp.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -105,24 +99,26 @@ Message: ${form.message}`;
             </a>
           </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-3">
-            {["Fresh Food", "Family Dining", "Fast Service", "100% Halal"].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-yellow-500/20 bg-white/5 p-4 text-center"
-              >
-                <p className="font-black text-yellow-500">✓</p>
-                <p className="text-sm text-white/70">{item}</p>
-              </div>
-            ))}
+          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+            {["Fresh Food", "Family Dining", "Fast Service", "100% Halal"].map(
+              (item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-yellow-500/20 bg-white/5 p-4 text-center"
+                >
+                  <p className="font-black text-yellow-500">✓</p>
+                  <p className="text-sm text-white/70">{item}</p>
+                </div>
+              )
+            )}
           </div>
         </div>
 
-       <div className="overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-zinc-950 shadow-2xl flex items-center justify-center">
+        <div className="flex items-center justify-center overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-zinc-950 shadow-2xl">
           <img
             src={restaurant.heroImage}
             alt={restaurant.name}
-            className="h-[280px] md:h-[500px] w-full object-contain"
+            className="h-[280px] w-full object-contain md:h-[500px]"
           />
         </div>
       </section>
