@@ -77,12 +77,10 @@ Message: ${form.message}`;
     Welcome to Belgian Broast
   </p>
 
-  <p className="text-base leading-7 text-white/75 md:text-lg">
-    A place where families connect, friends gather, and every meal becomes a
-    memorable experience. Enjoy fresh food, warm hospitality, and a peaceful
-    dining atmosphere in the heart of Rampur.
-  </p>
-</div>
+  <p className="mb-6 text-sm font-semibold text-yellow-500 md:text-base">
+  Welcome to Belgian Broast • Where Fresh Food, Warm Hospitality & Peaceful
+  Dining Create Memorable Experiences
+</p>
           <h2 className="text-5xl font-black leading-tight md:text-7xl">
             Crispy • Flavorful • Unforgettable Taste
           </h2>
