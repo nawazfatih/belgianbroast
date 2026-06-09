@@ -3,7 +3,6 @@ export type CategorySlug =
   | "burgers"
   | "wraps"
   | "pizza"
-  | "pasta"
   | "fries"
   | "combos"
   | "shakes"
@@ -33,31 +32,24 @@ export type MenuItem = {
 
 export const restaurant = {
   name: "Belgian Broast",
-  logoText: "BB",
   city: "Rampur",
   address:
     "Opposite Khushboo Garden, Jheel Road, Rampur, Thotar, Uttar Pradesh 244901",
   phone: "8868880002",
-  whatsapp: "8868880002",
+  whatsapp: "918868880002",
   email: "info@belgianbroast.com",
   hours: "Mon - Sun : 12:30 PM - 11:00 PM",
 
   seo: {
-    title: "Belgian Broast Rampur | Online Food Order & Family Dining",
+    title: "Belgian Broast Rampur | Family Restaurant",
     description:
-      "Order broast chicken, burgers, pizza, wraps, fries, combos, shakes and beverages from Belgian Broast Rampur. Premium family restaurant with online ordering, rewards and offers.",
+      "Belgian Broast Rampur family restaurant serving broast chicken, burgers, pizza, wraps, fries, combos, shakes and beverages.",
     keywords:
-      "Belgian Broast Rampur, online food order Rampur, broast chicken Rampur, burgers Rampur, pizza Rampur, family restaurant Rampur",
+      "Belgian Broast Rampur, family restaurant Rampur, broast chicken Rampur, burgers Rampur, pizza Rampur, best restaurant Rampur",
     siteUrl: "https://belgianbroast.com",
   },
 
   heroImage: "/restaurant-images/hero-restaurant.jpg",
-
-  zomatoLink:
-    "https://www.zomato.com/rampur/belgian-broast-rampur-rampur-locality/order",
-
-  googleMapLink:
-    "https://www.google.com/maps?daddr=R2FC%2BWRF,+Jheel+Road,+opposite+Khushboo+Garden,+Rampur,+Thotar,+Uttar+Pradesh+244901",
 
   categories: [
     {
@@ -70,31 +62,25 @@ export const restaurant = {
       name: "Burgers",
       slug: "burgers",
       description: "Zinger, paneer and herb chilli burgers.",
-      image: "/restaurant-images/zinger-burger.jpg",
+      image: "/restaurant-images/menu/special-zinger-burger.png",
     },
     {
       name: "Wraps",
       slug: "wraps",
       description: "Fresh wraps with chicken, paneer and veg fillings.",
-      image: "/restaurant-images/zinger-wrap.jpg",
+      image: "/restaurant-images/menu/zinger-wrap.png",
     },
     {
       name: "Pizza",
       slug: "pizza",
       description: "Chicken, paneer, veg and cheese pizzas.",
-      image: "/restaurant-images/bbq-chicken-pizza.jpg",
-    },
-    {
-      name: "Pasta",
-      slug: "pasta",
-      description: "Red sauce and white sauce pasta options.",
-      image: "/restaurant-images/pizza.jpg",
+      image: "/restaurant-images/menu/bbq-chicken-pizza.png",
     },
     {
       name: "Fries",
       slug: "fries",
       description: "Classic, peri peri and loaded fries.",
-      image: "/restaurant-images/classic-fries.jpg",
+      image: "/restaurant-images/menu/classic-french-fries.png",
     },
     {
       name: "Combos",
@@ -106,13 +92,13 @@ export const restaurant = {
       name: "Shakes",
       slug: "shakes",
       description: "Creamy strawberry, vanilla, Oreo and chocolate shakes.",
-      image: "/restaurant-images/oreo-shake.jpg",
+      image: "/restaurant-images/menu/oreo-shake.png",
     },
     {
       name: "Beverages",
       slug: "beverages",
       description: "Coffee, lemonade, mojito and cold drinks.",
-      image: "/restaurant-images/cold-coffee.jpg",
+      image: "/restaurant-images/menu/cold-coffee.png",
     },
   ] satisfies Category[],
 
@@ -176,7 +162,7 @@ export const restaurant = {
       price: 199,
       displayPrice: "₹199",
       description: "Tender juicy chicken bites, layered with cheese and sauces.",
-      image: "/restaurant-images/chicken-popcorn.jpg",
+      image: "/restaurant-images/menu/special-loaded-chicken-popcorn.png",
       tag: "Special",
       isSignature: true,
     },
@@ -190,10 +176,11 @@ export const restaurant = {
       displayPrice: "₹249",
       description:
         "Crispy chicken base topped with rich cheese, flavorful sauces and fresh toppings.",
-      image: "/restaurant-images/broast-combo.jpg",
+      image: "/restaurant-images/menu/special-tandoori-chicken-chizza.png",
       tag: "Special",
       isSignature: true,
     },
+
     {
       id: "special-zinger-burger",
       name: "Special Zinger Burger",
@@ -203,7 +190,7 @@ export const restaurant = {
       price: 119,
       displayPrice: "₹119",
       description: "Crispy zinger burger with special sauce.",
-      image: "/restaurant-images/zinger-burger.jpg",
+      image: "/restaurant-images/menu/special-zinger-burger.png",
       tag: "Best Seller",
       isPopular: true,
     },
@@ -216,7 +203,7 @@ export const restaurant = {
       price: 119,
       displayPrice: "₹119",
       description: "Spicy crispy chicken burger with fresh veggies.",
-      image: "/restaurant-images/spicy-zinger-burger.jpg",
+      image: "/restaurant-images/menu/spicy-zinger-burger.png",
     },
     {
       id: "mega-zinger-burger",
@@ -227,7 +214,7 @@ export const restaurant = {
       price: 149,
       displayPrice: "₹149",
       description: "Large zinger burger with extra crispy filling.",
-      image: "/restaurant-images/mega-zinger-burger.jpg",
+      image: "/restaurant-images/menu/mega-zinger-burger.png",
       isPopular: true,
     },
     {
@@ -239,7 +226,7 @@ export const restaurant = {
       price: 219,
       displayPrice: "₹219",
       description: "Two zinger burgers for sharing.",
-      image: "/restaurant-images/zinger-combo.jpg",
+      image: "/restaurant-images/menu/zinger-burger-duo.png",
       tag: "Duo",
     },
     {
@@ -251,7 +238,7 @@ export const restaurant = {
       price: 69,
       displayPrice: "₹69",
       description: "Veg herb chilli burger with fresh filling.",
-      image: "/restaurant-images/burger.jpg",
+      image: "/restaurant-images/menu/herb-chilli-burger.png",
     },
     {
       id: "herb-chilli-burger-duo",
@@ -262,7 +249,7 @@ export const restaurant = {
       price: 119,
       displayPrice: "₹119",
       description: "Two herb chilli burgers for sharing.",
-      image: "/restaurant-images/burger.jpg",
+      image: "/restaurant-images/menu/herb-chilli-burger-duo.png",
     },
     {
       id: "tangy-paneer-burger",
@@ -273,8 +260,9 @@ export const restaurant = {
       price: 119,
       displayPrice: "₹119",
       description: "Paneer burger with tangy sauce and fresh veggies.",
-      image: "/restaurant-images/paneer-burger.jpg",
+      image: "/restaurant-images/menu/tangy-paneer-burger.png",
     },
+
     {
       id: "zinger-wrap",
       name: "Zinger Wrap",
@@ -284,7 +272,7 @@ export const restaurant = {
       price: 99,
       displayPrice: "₹99",
       description: "Crispy zinger wrap with fresh veggies.",
-      image: "/restaurant-images/zinger-wrap.jpg",
+      image: "/restaurant-images/menu/zinger-wrap.png",
     },
     {
       id: "chicken-tikka-wrap",
@@ -320,6 +308,7 @@ export const restaurant = {
       description: "Mixed vegetable wrap with special sauce.",
       image: "/restaurant-images/mix-veg-wrap.jpg",
     },
+
     {
       id: "bbq-chicken-pizza",
       name: "BBQ Chicken Pizza",
@@ -329,7 +318,7 @@ export const restaurant = {
       price: 259,
       displayPrice: "₹259",
       description: "Smoky BBQ chicken pizza with cheese.",
-      image: "/restaurant-images/bbq-chicken-pizza.jpg",
+      image: "/restaurant-images/menu/bbq-chicken-pizza.png",
       tag: "Popular",
       isPopular: true,
     },
@@ -342,7 +331,7 @@ export const restaurant = {
       price: 259,
       displayPrice: "₹259",
       description: "Spicy chicken pizza with bold flavours.",
-      image: "/restaurant-images/spicy-chicken-pizza.jpg",
+      image: "/restaurant-images/menu/hot-spicy-chicken-pizza.png",
     },
     {
       id: "tandoori-chicken-pizza",
@@ -353,7 +342,7 @@ export const restaurant = {
       price: 269,
       displayPrice: "₹269",
       description: "Tandoori chicken pizza with rich cheese and sauces.",
-      image: "/restaurant-images/spicy-chicken-pizza.jpg",
+      image: "/restaurant-images/menu/tandoori-chicken-pizza.png",
     },
     {
       id: "chicken-tikka-pizza",
@@ -375,7 +364,7 @@ export const restaurant = {
       price: 199,
       displayPrice: "₹199",
       description: "Classic cheese pizza with tomato base.",
-      image: "/restaurant-images/margherita-pizza.jpg",
+      image: "/restaurant-images/menu/margherita-pizza.png",
     },
     {
       id: "hot-spicy-veg-pizza",
@@ -386,7 +375,7 @@ export const restaurant = {
       price: 249,
       displayPrice: "₹249",
       description: "Spicy veg pizza with cheesy toppings.",
-      image: "/restaurant-images/margherita-pizza.jpg",
+      image: "/restaurant-images/menu/hot-spicy-veg-pizza.png",
     },
     {
       id: "paneer-tikka-pizza",
@@ -397,7 +386,7 @@ export const restaurant = {
       price: 249,
       displayPrice: "₹249",
       description: "Paneer tikka pizza with cheesy toppings.",
-      image: "/restaurant-images/paneer-tikka-pizza.jpg",
+      image: "/restaurant-images/menu/paneer-tikka-pizza.png",
     },
     {
       id: "farmhouse-delight-pizza",
@@ -408,52 +397,9 @@ export const restaurant = {
       price: 249,
       displayPrice: "₹249",
       description: "Veg farmhouse pizza with fresh toppings.",
-      image: "/restaurant-images/paneer-tikka-pizza.jpg",
+      image: "/restaurant-images/menu/farmhouse-delight-pizza.png",
     },
-    {
-      id: "red-sauce-chicken-pasta",
-      name: "Red Sauce Chicken Pasta",
-      slug: "red-sauce-chicken-pasta",
-      category: "Pasta",
-      categorySlug: "pasta",
-      price: 199,
-      displayPrice: "₹199",
-      description: "Chicken pasta tossed in red sauce.",
-      image: "/restaurant-images/pizza.jpg",
-    },
-    {
-      id: "white-sauce-chicken-pasta",
-      name: "White Sauce Chicken Pasta",
-      slug: "white-sauce-chicken-pasta",
-      category: "Pasta",
-      categorySlug: "pasta",
-      price: 199,
-      displayPrice: "₹199",
-      description: "Chicken pasta tossed in creamy white sauce.",
-      image: "/restaurant-images/pizza.jpg",
-    },
-    {
-      id: "mix-veg-red-sauce-pasta",
-      name: "Mix Veg Red Sauce Pasta",
-      slug: "mix-veg-red-sauce-pasta",
-      category: "Pasta",
-      categorySlug: "pasta",
-      price: 149,
-      displayPrice: "₹149",
-      description: "Mixed veg pasta tossed in red sauce.",
-      image: "/restaurant-images/pizza.jpg",
-    },
-    {
-      id: "mix-veg-white-sauce-pasta",
-      name: "Mix Veg White Sauce Pasta",
-      slug: "mix-veg-white-sauce-pasta",
-      category: "Pasta",
-      categorySlug: "pasta",
-      price: 149,
-      displayPrice: "₹149",
-      description: "Mixed veg pasta tossed in creamy white sauce.",
-      image: "/restaurant-images/pizza.jpg",
-    },
+
     {
       id: "classic-french-fries",
       name: "Classic French Fries",
@@ -463,7 +409,7 @@ export const restaurant = {
       price: 79,
       displayPrice: "₹79",
       description: "Golden crispy salted fries.",
-      image: "/restaurant-images/classic-fries.jpg",
+      image: "/restaurant-images/menu/classic-french-fries.png",
     },
     {
       id: "peri-peri-fries",
@@ -488,6 +434,7 @@ export const restaurant = {
       image: "/restaurant-images/loaded-fries.jpg",
       isPopular: true,
     },
+
     {
       id: "zinger-combo",
       name: "Zinger Combo",
@@ -513,6 +460,7 @@ export const restaurant = {
       image: "/restaurant-images/broast-combo.jpg",
       isSignature: true,
     },
+
     {
       id: "strawberry-shake",
       name: "Strawberry Shake",
@@ -522,7 +470,7 @@ export const restaurant = {
       price: 119,
       displayPrice: "₹119",
       description: "Creamy strawberry shake.",
-      image: "/restaurant-images/strawberry-shake.jpg",
+      image: "/restaurant-images/menu/strawberry-shake.png",
     },
     {
       id: "vanilla-shake",
@@ -533,7 +481,7 @@ export const restaurant = {
       price: 119,
       displayPrice: "₹119",
       description: "Creamy vanilla shake.",
-      image: "/restaurant-images/vanilla-shake.jpg",
+      image: "/restaurant-images/menu/vanilla-shake.png",
     },
     {
       id: "oreo-shake",
@@ -544,7 +492,7 @@ export const restaurant = {
       price: 139,
       displayPrice: "₹139",
       description: "Creamy Oreo shake with chocolate crunch.",
-      image: "/restaurant-images/oreo-shake.jpg",
+      image: "/restaurant-images/menu/oreo-shake.png",
       isPopular: true,
     },
     {
@@ -556,8 +504,9 @@ export const restaurant = {
       price: 129,
       displayPrice: "₹129",
       description: "Creamy chocolate shake.",
-      image: "/restaurant-images/chocolate-shake.jpg",
+      image: "/restaurant-images/menu/chocolate-shake.png",
     },
+
     {
       id: "cold-coffee",
       name: "Cold Coffee",
@@ -567,7 +516,7 @@ export const restaurant = {
       price: 99,
       displayPrice: "₹99",
       description: "Chilled creamy cold coffee.",
-      image: "/restaurant-images/cold-coffee.jpg",
+      image: "/restaurant-images/menu/cold-coffee.png",
       isPopular: true,
     },
     {
@@ -579,7 +528,7 @@ export const restaurant = {
       price: 79,
       displayPrice: "₹79",
       description: "Refreshing iced lemonade.",
-      image: "/restaurant-images/virgin-mojito.jpg",
+      image: "/restaurant-images/menu/iced-lemonade.png",
     },
     {
       id: "virgin-mojito",
@@ -590,7 +539,7 @@ export const restaurant = {
       price: 79,
       displayPrice: "₹79",
       description: "Refreshing mint mojito.",
-      image: "/restaurant-images/virgin-mojito.jpg",
+      image: "/restaurant-images/menu/virgin-mojito.png",
     },
     {
       id: "regular-filter-coffee",
@@ -601,18 +550,18 @@ export const restaurant = {
       price: 59,
       displayPrice: "₹59",
       description: "Classic regular filter coffee.",
-      image: "/restaurant-images/cold-coffee.jpg",
+      image: "/restaurant-images/menu/regular-filter-coffee.png",
     },
     {
       id: "hand-beaten-coffee",
-      name: "Hand-Beaten Coffee",
+      name: "Hand Beaten Coffee",
       slug: "hand-beaten-coffee",
       category: "Beverages",
       categorySlug: "beverages",
       price: 99,
       displayPrice: "₹99",
-      description: "Rich hand-beaten coffee.",
-      image: "/restaurant-images/cold-coffee.jpg",
+      description: "Rich hand beaten coffee.",
+      image: "/restaurant-images/menu/hand-beaten-coffee.png",
     },
     {
       id: "black-coffee",
@@ -623,7 +572,7 @@ export const restaurant = {
       price: 59,
       displayPrice: "₹59",
       description: "Classic black coffee.",
-      image: "/restaurant-images/cold-coffee.jpg",
+      image: "/restaurant-images/menu/black-coffee.png",
     },
     {
       id: "cold-drinks",
@@ -634,51 +583,21 @@ export const restaurant = {
       price: "MRP",
       displayPrice: "MRP",
       description: "Cold drinks available at MRP.",
-      image: "/restaurant-images/beverage.jpg",
+      image: "/restaurant-images/menu/cold-drinks.png",
     },
   ] satisfies MenuItem[],
 
-  rewards: {
-    spendRule: "₹100 Spend = 5 Points",
-    conversionRule: "100 Points = ₹10",
-    birthdayReward: "100 Points",
-    referralReward: "100 Points",
-    selfieReward: "50 Points instantly",
-    socialReward: "100 Points",
-    socialFreeItemRule:
-      "Next order ₹200+ eligible for complimentary surprise food item chosen by Belgian Broast.",
-  },
-
-  subscriptionPlans: [
-    {
-      name: "Silver",
-      price: "₹99/month",
-      benefits: ["5% Discount", "Birthday Coupon"],
-    },
-    {
-      name: "Gold",
-      price: "₹199/month",
-      benefits: ["10% Discount", "Double Reward Points"],
-      highlighted: true,
-    },
-    {
-      name: "Family",
-      price: "₹299/month",
-      benefits: ["10% Discount", "Double Points", "Family Offers"],
-    },
-  ],
-
-  offers: [
-    "First order reward points",
-    "Subscription discounts available",
-    "Surprise food item on eligible social reward orders",
-  ],
-
   gallery: [
-    "/restaurant-images/gallery-1.jpg",
-    "/restaurant-images/gallery-2.jpg",
-    "/restaurant-images/gallery-3.jpg",
-    "/restaurant-images/gallery-4.jpg",
+    "/restaurant-images/gallery/gallery-1.jpg",
+    "/restaurant-images/gallery/gallery-2.jpg",
+    "/restaurant-images/gallery/gallery-3.jpg",
+    "/restaurant-images/gallery/gallery-4.jpg",
+    "/restaurant-images/gallery/gallery-5.jpg",
+    "/restaurant-images/gallery/gallery-6.jpg",
+    "/restaurant-images/gallery/gallery-7.jpg",
+    "/restaurant-images/gallery/gallery-8.jpg",
+    "/restaurant-images/gallery/gallery-9.jpg",
+    "/restaurant-images/gallery/gallery-10.jpg",
   ],
 
   reviews: [
@@ -693,29 +612,6 @@ export const restaurant = {
     {
       name: "Faizan Qureshi",
       text: "Good ambience, quick service and tasty food.",
-    },
-  ],
-
-  faqs: [
-    {
-      question: "Can I order online from Belgian Broast Rampur?",
-      answer:
-        "Yes, customers can order online through the website flow. WhatsApp and call ordering can also remain available during the early launch phase.",
-    },
-    {
-      question: "Do menu prices change for bulk quantity?",
-      answer:
-        "No. Menu prices remain fixed per quantity. Discounts apply only through subscription, coupon, offer or owner-approved campaign.",
-    },
-    {
-      question: "How does the selfie reward work?",
-      answer:
-        "Customers can upload a selfie with food and receive 50 reward points instantly. The system can support approval later if needed.",
-    },
-    {
-      question: "Can customers choose the complimentary surprise item?",
-      answer:
-        "No. On eligible social reward orders, the complimentary surprise item is selected by Belgian Broast.",
     },
   ],
 

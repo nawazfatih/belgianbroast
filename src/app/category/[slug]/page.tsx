@@ -50,11 +50,23 @@ export default async function CategoryPage({ params }: Props) {
     <main className="min-h-screen bg-black text-white">
       <header className="border-b border-yellow-500/20 bg-black">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5">
-          <Link
-            href="/"
-            className="text-2xl font-black text-yellow-500"
-          >
-            Belgian Broast
+          <Link href="/" className="flex items-center gap-3">
+            <img
+              src="/restaurant-images/logo.png"
+              alt={restaurant.name}
+              className="h-16 w-auto object-contain"
+            />
+
+            <div>
+              <h1 className="text-2xl font-black">
+                <span className="text-white">Belgian </span>
+                <span className="text-red-500">Broast</span>
+              </h1>
+
+              <p className="text-xs font-bold text-yellow-500">
+                Family Restaurant • Rampur
+              </p>
+            </div>
           </Link>
 
           <Link
@@ -89,11 +101,11 @@ export default async function CategoryPage({ params }: Props) {
                 href={`/menu/${item.slug}`}
                 className="group overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-zinc-950 transition hover:-translate-y-1 hover:border-yellow-500"
               >
-                <div className="overflow-hidden">
+                <div className="flex h-72 items-center justify-center bg-black p-3">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="h-64 w-full object-cover transition duration-500 group-hover:scale-110"
+                    className="max-h-full max-w-full object-contain transition duration-500 group-hover:scale-105"
                   />
                 </div>
 

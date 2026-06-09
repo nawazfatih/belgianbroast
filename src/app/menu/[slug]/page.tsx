@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  getMenuItemBySlug,
-  restaurant,
-} from "../../restaurantData";
+import { getMenuItemBySlug, restaurant } from "../../restaurantData";
 
 type Props = {
   params: Promise<{
@@ -43,13 +40,10 @@ export default async function MenuItemPage({ params }: Props) {
     notFound();
   }
 
-  const whatsappText = `Hello Belgian Broast, I want to order:
+  const whatsappMessage = `Hello Belgian Broast, I want to order:\n\n${item.name}\nPrice: ${item.displayPrice}`;
 
-${item.name}
-Price: ${item.displayPrice}`;
-
-  const whatsappLink = `https://wa.me/91${restaurant.whatsapp}?text=${encodeURIComponent(
-    whatsappText
+  const whatsappLink = `https://wa.me/${restaurant.whatsapp}?text=${encodeURIComponent(
+    whatsappMessage
   )}`;
 
   const relatedItems = restaurant.menu
@@ -62,13 +56,25 @@ Price: ${item.displayPrice}`;
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <header className="border-b border-yellow-500/20 bg-black">
+      <header className="sticky top-0 z-50 border-b border-yellow-500/20 bg-black/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5">
-          <Link
-            href="/"
-            className="text-2xl font-black text-yellow-500"
-          >
-            Belgian Broast
+          <Link href="/" className="flex items-center gap-3">
+            <img
+              src="/restaurant-images/logo.png"
+              alt={restaurant.name}
+              className="h-16 w-auto object-contain"
+            />
+
+            <div>
+              <h1 className="text-2xl font-black">
+                <span className="text-white">Belgian </span>
+                <span className="text-red-500">Broast</span>
+              </h1>
+
+              <p className="text-xs font-bold text-yellow-500">
+                Family Restaurant • Rampur
+              </p>
+            </div>
           </Link>
 
           <Link
@@ -83,11 +89,11 @@ Price: ${item.displayPrice}`;
       <section className="px-5 py-16">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
           <div>
-            <div className="overflow-hidden rounded-[2rem] border border-yellow-500/20">
+            <div className="flex min-h-[360px] items-center justify-center overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-zinc-950 p-4">
               <img
                 src={item.image}
                 alt={item.name}
-                className="h-[500px] w-full object-cover"
+                className="max-h-[520px] max-w-full object-contain"
               />
             </div>
           </div>
@@ -97,7 +103,7 @@ Price: ${item.displayPrice}`;
               {item.category}
             </p>
 
-            <h1 className="mt-4 text-5xl font-black">
+            <h1 className="mt-4 text-5xl font-black leading-tight">
               {item.name}
             </h1>
 
@@ -105,63 +111,46 @@ Price: ${item.displayPrice}`;
               {item.description}
             </p>
 
-            <div className="mt-8">
-              <p className="text-4xl font-black text-yellow-500">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <p className="rounded-2xl border border-yellow-500/30 bg-zinc-950 px-6 py-3 text-4xl font-black text-yellow-500">
                 {item.displayPrice}
               </p>
+
+              {item.tag && (
+                <span className="rounded-full bg-yellow-500 px-5 py-2 text-sm font-black text-black">
+                  {item.tag}
+                </span>
+              )}
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black">
-                Add To Cart
-              </button>
-
-              <button className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-500">
-                Buy Now
-              </button>
-
               <a
                 href={whatsappLink}
                 target="_blank"
-                className="rounded-full bg-green-600 px-8 py-4 font-black text-white"
+                className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
               >
                 WhatsApp Order
               </a>
+
+              <a
+                href={`tel:${restaurant.phone}`}
+                className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-500"
+              >
+                Call Now
+              </a>
             </div>
 
-            <div className="mt-12 rounded-[2rem] border border-yellow-500/20 bg-zinc-950 p-6">
+            <div className="mt-10 rounded-[2rem] border border-yellow-500/20 bg-zinc-950 p-6">
               <h2 className="text-2xl font-black text-yellow-500">
-                Reward Benefits
+                Why Customers Love It
               </h2>
 
               <ul className="mt-5 space-y-3 text-white/70">
-                <li>✓ ₹100 Spend = 5 Reward Points</li>
-                <li>✓ 100 Points = ₹10</li>
-                <li>✓ Birthday Reward = 100 Points</li>
-                <li>✓ Referral Reward = 100 Points</li>
-                <li>✓ Selfie Reward = 50 Points</li>
-                <li>✓ Social Reward = 100 Points</li>
+                <li>✓ Freshly prepared food</li>
+                <li>✓ Premium ingredients</li>
+                <li>✓ Family dining experience</li>
+                <li>✓ Available for WhatsApp and phone orders</li>
               </ul>
-            </div>
-
-            <div className="mt-8 rounded-[2rem] border border-yellow-500/20 bg-zinc-950 p-6">
-              <h2 className="text-2xl font-black text-yellow-500">
-                Subscription Savings
-              </h2>
-
-              <div className="mt-5 grid gap-4 md:grid-cols-3">
-                {restaurant.subscriptionPlans.map((plan) => (
-                  <div
-                    key={plan.name}
-                    className="rounded-2xl border border-yellow-500/20 bg-black p-4"
-                  >
-                    <h3 className="font-black">{plan.name}</h3>
-                    <p className="mt-2 text-yellow-500">
-                      {plan.price}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -180,16 +169,16 @@ Price: ${item.displayPrice}`;
                 href={`/menu/${food.slug}`}
                 className="overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-black"
               >
-                <img
-                  src={food.image}
-                  alt={food.name}
-                  className="h-52 w-full object-cover"
-                />
+                <div className="flex h-52 items-center justify-center bg-black p-2">
+                  <img
+                    src={food.image}
+                    alt={food.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
 
                 <div className="p-5">
-                  <h3 className="font-black">
-                    {food.name}
-                  </h3>
+                  <h3 className="font-black">{food.name}</h3>
 
                   <p className="mt-2 text-yellow-500">
                     {food.displayPrice}
@@ -200,6 +189,23 @@ Price: ${item.displayPrice}`;
           </div>
         </div>
       </section>
+
+      <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          className="rounded-full bg-yellow-500 px-6 py-3 text-center font-black text-black shadow-xl"
+        >
+          WhatsApp
+        </a>
+
+        <a
+          href={`tel:${restaurant.phone}`}
+          className="rounded-full border border-yellow-500 bg-black px-6 py-3 text-center font-black text-yellow-500 shadow-xl"
+        >
+          Call
+        </a>
+      </div>
     </main>
   );
 }

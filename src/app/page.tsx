@@ -1,32 +1,31 @@
 import Link from "next/link";
-import {
-  popularItems,
-  restaurant,
-  signatureItems,
-} from "./restaurantData";
+import { popularItems, restaurant, signatureItems } from "./restaurantData";
 
 export default function HomePage() {
-  const whatsappText = `Hello ${restaurant.name}, I want to order food.`;
-  const whatsappLink = `https://wa.me/91${restaurant.whatsapp}?text=${encodeURIComponent(
-    whatsappText
+  const whatsappMessage =
+    "Hello Belgian Broast, I want to order food from your menu.";
+  const whatsappLink = `https://wa.me/${restaurant.whatsapp}?text=${encodeURIComponent(
+    whatsappMessage
   )}`;
 
   return (
     <main className="min-h-screen bg-black text-white">
       <header className="sticky top-0 z-50 border-b border-yellow-500/20 bg-black/95 px-5 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-4">
+          <Link href="/" className="flex items-center gap-3">
             <img
               src="/restaurant-images/logo.png"
               alt={restaurant.name}
-              className="h-16 w-auto object-contain md:h-20"
+              className="h-20 w-auto shrink-0 object-contain md:h-40"
             />
 
-            <div>
-              <h1 className="text-3xl font-black leading-none text-white md:text-4xl">
-                {restaurant.name}
+            <div className="min-w-0">
+              <h1 className="whitespace-nowrap text-2xl font-black leading-none md:text-5xl">
+                <span className="text-white">Belgian </span>
+                <span className="text-red-500">Broast</span>
               </h1>
-              <p className="mt-2 text-sm font-bold text-yellow-500 md:text-base">
+
+              <p className="mt-2 whitespace-nowrap text-xs font-bold text-yellow-500 md:text-lg">
                 Luxury Family Restaurant • {restaurant.city}
               </p>
             </div>
@@ -35,26 +34,25 @@ export default function HomePage() {
           <nav className="hidden items-center gap-7 text-sm font-bold text-white/75 lg:flex">
             <a href="#categories">Menu</a>
             <a href="#popular">Popular</a>
-            <a href="#offers">Offers</a>
-            <a href="#subscriptions">Subscriptions</a>
-            <a href="#rewards">Rewards</a>
+            <a href="#gallery">Gallery</a>
             <a href="#location">Contact</a>
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <Link
-              href="/account"
+            <a
+              href={`tel:${restaurant.phone}`}
               className="rounded-full border border-yellow-500/30 px-5 py-3 text-sm font-black text-yellow-500"
             >
-              Account
-            </Link>
+              Call Now
+            </a>
 
-            <Link
-              href="/cart"
+            <a
+              href={whatsappLink}
+              target="_blank"
               className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
             >
-              Order Now
-            </Link>
+              WhatsApp Order
+            </a>
           </div>
         </div>
       </header>
@@ -65,12 +63,15 @@ export default function HomePage() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div>
-            <p className="mb-8 max-w-2xl text-base font-bold leading-8 text-yellow-500">
-              Welcome to Belgian Broast • Where Fresh Food, Warm Hospitality &
-              Peaceful Dining Create Memorable Experiences
+            <p className="mb-8 max-w-2xl whitespace-pre-line text-base font-bold leading-8 text-yellow-500">
+              {`Welcome to Belgian Broast
+
+At Belgian Broast, we believe great memories begin with great food. We are a peaceful place where families connect, children smile, and everyone feels at home.
+
+Your family’s health is our highest priority. That’s why we prepare our meals fresh every day, using quality ingredients and avoiding processed foods whenever possible. Every dish is made with care, because we serve our guests the same way we would serve our own family.`}
             </p>
 
-            <h2 className="text-6xl font-black leading-tight text-white md:text-7xl lg:text-8xl">
+            <h2 className="max-w-full text-5xl font-black leading-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
               Crispy •<br />
               Flavorful •<br />
               Unforgettable
@@ -78,32 +79,33 @@ export default function HomePage() {
               Taste
             </h2>
 
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/70">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 md:mt-8 md:text-lg md:leading-8">
               Enjoy signature broast chicken, juicy burgers, pizzas, wraps,
               fries, shakes, beverages and a premium family dining experience in
               the heart of {restaurant.city}.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/cart"
+              <a
+                href={whatsappLink}
+                target="_blank"
                 className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
               >
-                Order Online
-              </Link>
-
-              <a
-                href="#categories"
-                className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-500"
-              >
-                View Menu
+                WhatsApp Order
               </a>
 
               <a
-                href={whatsappLink}
-                className="rounded-full border border-green-500 px-8 py-4 font-black text-green-400"
+                href={`tel:${restaurant.phone}`}
+                className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-500"
               >
-                WhatsApp Order
+                Call Now
+              </a>
+
+              <a
+                href="#categories"
+                className="rounded-full border border-white/20 px-8 py-4 font-black text-white"
+              >
+                View Menu
               </a>
             </div>
           </div>
@@ -120,22 +122,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-yellow-500/20 bg-zinc-950 px-5 py-8">
-        <div className="mx-auto max-w-4xl">
-          <input
-            placeholder="Search broast, burger, pizza, wraps..."
-            className="w-full rounded-2xl border border-yellow-500/20 bg-black px-6 py-5 text-white outline-none placeholder:text-white/40"
-          />
-        </div>
-      </section>
-
       <section id="categories" className="px-5 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
               Categories
             </p>
-            <h2 className="mt-3 text-4xl font-black md:text-5xl">
+            <h2 className="mt-3 text-4xl font-black">
               What would you like to order?
             </h2>
           </div>
@@ -147,11 +140,14 @@ export default function HomePage() {
                 href={`/category/${category.slug}`}
                 className="group overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-zinc-950 transition hover:-translate-y-1 hover:border-yellow-500"
               >
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
-                />
+                <div className="flex h-56 items-center justify-center bg-black">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="max-h-full max-w-full object-contain p-2 transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+
                 <div className="p-6">
                   <h3 className="text-2xl font-black text-yellow-500">
                     {category.name}
@@ -181,11 +177,14 @@ export default function HomePage() {
                 href={`/menu/${item.slug}`}
                 className="rounded-[2rem] border border-yellow-500/20 bg-black p-5"
               >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-56 w-full rounded-3xl object-cover"
-                />
+                <div className="flex h-56 items-center justify-center rounded-3xl bg-black p-2">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+
                 <h3 className="mt-5 text-xl font-black">{item.name}</h3>
                 <p className="mt-2 text-white/60">{item.description}</p>
                 <p className="mt-4 text-2xl font-black text-yellow-500">
@@ -211,11 +210,14 @@ export default function HomePage() {
                 href={`/menu/${item.slug}`}
                 className="rounded-[2rem] border border-yellow-500/20 bg-zinc-950 p-5"
               >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-44 w-full rounded-3xl object-cover"
-                />
+                <div className="flex h-44 items-center justify-center rounded-3xl bg-black p-2">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+
                 <h3 className="mt-4 font-black">{item.name}</h3>
                 <p className="mt-2 text-xl font-black text-yellow-500">
                   {item.displayPrice}
@@ -226,101 +228,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="offers" className="bg-zinc-950 px-5 py-16">
+      <section id="gallery" className="bg-zinc-950 px-5 py-16">
         <div className="mx-auto max-w-7xl">
           <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
-            Offers
+            Restaurant Gallery
           </p>
-          <h2 className="mt-3 text-4xl font-black">Premium Food Benefits</h2>
+          <h2 className="mt-3 text-4xl font-black">
+            Ambience, Dining & Food Moments
+          </h2>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {restaurant.offers.map((offer) => (
+          <p className="mt-4 max-w-2xl text-white/60">
+            A glimpse of Belgian Broast Rampur — family seating, dining area,
+            food presentation and restaurant ambience.
+          </p>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {restaurant.gallery.map((image, index) => (
               <div
-                key={offer}
-                className="rounded-3xl border border-yellow-500/20 bg-black p-6"
+                key={image}
+                className="overflow-hidden rounded-[2rem] border border-yellow-500/20 bg-black"
               >
-                <p className="text-3xl text-yellow-500">✦</p>
-                <h3 className="mt-4 font-black">{offer}</h3>
+                <img
+                  src={image}
+                  alt={`Belgian Broast restaurant gallery ${index + 1}`}
+                  className="h-56 w-full object-cover transition duration-500 hover:scale-105"
+                />
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="subscriptions" className="px-5 py-16">
-        <div className="mx-auto max-w-7xl">
-          <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
-            Subscription Plans
-          </p>
-          <h2 className="mt-3 text-4xl font-black">Save More Every Month</h2>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {restaurant.subscriptionPlans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-[2rem] border p-7 ${
-                  plan.highlighted
-                    ? "border-yellow-500 bg-yellow-500 text-black"
-                    : "border-yellow-500/20 bg-zinc-950"
-                }`}
-              >
-                <h3 className="text-3xl font-black">{plan.name}</h3>
-                <p className="mt-3 text-2xl font-black">{plan.price}</p>
-                <div className="mt-5 space-y-3">
-                  {plan.benefits.map((benefit) => (
-                    <p key={benefit} className="font-bold">
-                      ✓ {benefit}
-                    </p>
-                  ))}
-                </div>
-                <Link
-                  href="/subscriptions"
-                  className={`mt-6 inline-block rounded-full px-6 py-3 font-black ${
-                    plan.highlighted
-                      ? "bg-black text-yellow-500"
-                      : "bg-yellow-500 text-black"
-                  }`}
-                >
-                  View Plan
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="rewards" className="bg-zinc-950 px-5 py-16">
-        <div className="mx-auto max-w-7xl">
-          <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
-            Rewards
-          </p>
-          <h2 className="mt-3 text-4xl font-black">Eat, Share & Earn Points</h2>
-
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {[
-              restaurant.rewards.spendRule,
-              restaurant.rewards.selfieReward,
-              restaurant.rewards.socialReward,
-              restaurant.rewards.referralReward,
-              restaurant.rewards.birthdayReward,
-              restaurant.rewards.socialFreeItemRule,
-            ].map((reward, index) => (
-              <div
-                key={`${reward}-${index}`}
-                className="rounded-3xl border border-yellow-500/20 bg-black p-6"
-              >
-                <p className="text-3xl text-yellow-500">★</p>
-                <p className="mt-4 font-bold text-white/80">{reward}</p>
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href="/rewards"
-            className="mt-8 inline-block rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
-          >
-            View Rewards
-          </Link>
         </div>
       </section>
 
@@ -357,6 +292,23 @@ export default function HomePage() {
             <p className="mt-2 text-white/60">Call: {restaurant.phone}</p>
             <p className="mt-2 text-white/60">Email: {restaurant.email}</p>
             <p className="mt-2 text-white/60">{restaurant.hours}</p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href={`tel:${restaurant.phone}`}
+                className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
+              >
+                Call Now
+              </a>
+
+              <a
+                href={whatsappLink}
+                target="_blank"
+                className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-500"
+              >
+                WhatsApp Order
+              </a>
+            </div>
           </div>
 
           <div className="overflow-hidden rounded-3xl border border-yellow-500/20">
@@ -372,17 +324,19 @@ export default function HomePage() {
       </section>
 
       <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
-        <Link
-          href="/cart"
-          className="rounded-full bg-yellow-500 px-6 py-3 text-center font-black text-black shadow-xl"
-        >
-          Order
-        </Link>
         <a
           href={whatsappLink}
-          className="rounded-full bg-green-600 px-6 py-3 text-center font-black text-white shadow-xl"
+          target="_blank"
+          className="rounded-full bg-yellow-500 px-5 py-3 text-sm font-black text-black shadow-xl md:px-6 md:text-base"
         >
           WhatsApp
+        </a>
+
+        <a
+          href={`tel:${restaurant.phone}`}
+          className="rounded-full border border-yellow-500 bg-black px-5 py-3 text-center text-sm font-black text-yellow-500 shadow-xl md:px-6 md:text-base"
+        >
+          Call
         </a>
       </div>
 
@@ -398,14 +352,15 @@ export default function HomePage() {
               {restaurant.name}
             </h3>
             <p className="mt-3 text-white/60">
-              Premium online food ordering platform for {restaurant.city}.
+              Luxury family restaurant in {restaurant.city}, serving broast,
+              burgers, pizza, wraps, fries, combos, shakes and beverages.
             </p>
           </div>
 
           <div>
             <h4 className="font-black text-yellow-500">Categories</h4>
             <div className="mt-3 flex flex-col gap-2 text-white/60">
-              {restaurant.categories.slice(0, 6).map((item) => (
+              {restaurant.categories.slice(0, 8).map((item) => (
                 <Link key={item.slug} href={`/category/${item.slug}`}>
                   {item.name}
                 </Link>
@@ -416,12 +371,10 @@ export default function HomePage() {
           <div>
             <h4 className="font-black text-yellow-500">Quick Links</h4>
             <div className="mt-3 flex flex-col gap-2 text-white/60">
-              <Link href="/cart">Cart</Link>
-              <Link href="/account">My Account</Link>
-              <Link href="/orders">Orders</Link>
-              <Link href="/wishlist">Wishlist</Link>
-              <Link href="/rewards">Rewards</Link>
-              <Link href="/subscriptions">Subscriptions</Link>
+              <a href="#categories">Menu</a>
+              <a href="#popular">Popular Food</a>
+              <a href="#gallery">Gallery</a>
+              <a href="#location">Location</a>
             </div>
           </div>
 
@@ -430,6 +383,23 @@ export default function HomePage() {
             <p className="mt-3 text-white/60">{restaurant.address}</p>
             <p className="mt-2 text-white/60">{restaurant.phone}</p>
             <p className="mt-2 text-white/60">{restaurant.email}</p>
+
+            <div className="mt-5 flex flex-col gap-3">
+              <a
+                href={`tel:${restaurant.phone}`}
+                className="rounded-full bg-yellow-500 px-5 py-3 text-center font-black text-black"
+              >
+                Call Now
+              </a>
+
+              <a
+                href={whatsappLink}
+                target="_blank"
+                className="rounded-full border border-yellow-500 px-5 py-3 text-center font-black text-yellow-500"
+              >
+                WhatsApp Order
+              </a>
+            </div>
           </div>
         </div>
 
