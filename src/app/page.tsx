@@ -41,7 +41,7 @@ export default function HomePage() {
           <div className="hidden items-center gap-3 md:flex">
             <a
               href={`tel:${restaurant.phone}`}
-              className="rounded-full border border-yellow-500/30 px-5 py-3 text-sm font-black text-yellow-500"
+              className="rounded-full bg-red-600 px-5 py-3 text-sm font-black text-white transition hover:bg-red-700"
             >
               Call Now
             </a>
@@ -49,7 +49,7 @@ export default function HomePage() {
             <a
               href={whatsappLink}
               target="_blank"
-              className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
+              className="rounded-full bg-green-600 px-8 py-4 font-black text-white transition hover:bg-green-700"
             >
               WhatsApp Order
             </a>
@@ -57,7 +57,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-yellow-500/20 px-5 py-16 md:py-24">
+      <section className="relative overflow-hidden border-b border-green-500/20 px-5 py-16 md:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_35%,rgba(234,179,8,0.16),transparent_35%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(120deg,#000_0%,#030303_50%,#0b0b0b_100%)]" />
 
@@ -89,14 +89,14 @@ Your family’s health is our highest priority. That’s why we prepare our meal
               <a
                 href={whatsappLink}
                 target="_blank"
-                className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
+                className="rounded-full bg-green-600 px-8 py-4 font-black text-white transition hover:bg-green-700"
               >
                 WhatsApp Order
               </a>
 
               <a
                 href={`tel:${restaurant.phone}`}
-                className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-500"
+                className="rounded-full bg-red-600 px-8 py-4 font-black text-white transition hover:bg-red-700"
               >
                 Call Now
               </a>
@@ -296,7 +296,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href={`tel:${restaurant.phone}`}
-                className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
+                className="rounded-full bg-red-600 px-8 py-4 font-black text-white transition hover:bg-red-700"
               >
                 Call Now
               </a>
@@ -304,7 +304,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
               <a
                 href={whatsappLink}
                 target="_blank"
-                className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-500"
+                className="rounded-full bg-green-600 px-8 py-4 font-black text-white transition hover:bg-green-700"
               >
                 WhatsApp Order
               </a>
@@ -327,14 +327,14 @@ Your family’s health is our highest priority. That’s why we prepare our meal
         <a
           href={whatsappLink}
           target="_blank"
-          className="rounded-full bg-yellow-500 px-5 py-3 text-sm font-black text-black shadow-xl md:px-6 md:text-base"
+          className="rounded-full bg-green-600 px-5 py-3 text-sm font-black text-white shadow-xl transition hover:bg-green-700 md:px-6 md:text-base"
         >
           WhatsApp
         </a>
 
         <a
           href={`tel:${restaurant.phone}`}
-          className="rounded-full border border-yellow-500 bg-black px-5 py-3 text-center text-sm font-black text-yellow-500 shadow-xl md:px-6 md:text-base"
+          className="rounded-full bg-red-600 px-5 py-3 text-center text-sm font-black text-white shadow-xl transition hover:bg-red-700 md:px-6 md:text-base"
         >
           Call
         </a>
@@ -387,7 +387,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
             <div className="mt-5 flex flex-col gap-3">
               <a
                 href={`tel:${restaurant.phone}`}
-                className="rounded-full bg-yellow-500 px-5 py-3 text-center font-black text-black"
+                className="rounded-full bg-red-600 px-5 py-3 text-center font-black text-white transition hover:bg-red-700"
               >
                 Call Now
               </a>
@@ -395,7 +395,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
               <a
                 href={whatsappLink}
                 target="_blank"
-                className="rounded-full border border-yellow-500 px-5 py-3 text-center font-black text-yellow-500"
+                className="rounded-full bg-green-600 px-5 py-3 text-center font-black text-white transition hover:bg-green-700"
               >
                 WhatsApp Order
               </a>

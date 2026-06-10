@@ -98,7 +98,7 @@ export const restaurant = {
       name: "Beverages",
       slug: "beverages",
       description: "Coffee, lemonade, mojito and cold drinks.",
-      image: "/restaurant-images/menu/cold-coffee.png",
+      image: "/restaurant-images/menu/virgin-mojito.png",
     },
   ] satisfies Category[],
 
