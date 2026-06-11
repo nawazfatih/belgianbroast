@@ -127,14 +127,14 @@ export default async function MenuItemPage({ params }: Props) {
               <a
                 href={whatsappLink}
                 target="_blank"
-                className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black"
+                className="rounded-full bg-green-600 px-8 py-4 font-black text-white transition hover:bg-green-700"
               >
                 WhatsApp Order
               </a>
 
               <a
                 href={`tel:${restaurant.phone}`}
-                className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-500"
+                className="rounded-full bg-red-600 px-8 py-4 font-black text-white transition hover:bg-red-700"
               >
                 Call Now
               </a>
@@ -194,14 +194,14 @@ export default async function MenuItemPage({ params }: Props) {
         <a
           href={whatsappLink}
           target="_blank"
-          className="rounded-full bg-yellow-500 px-6 py-3 text-center font-black text-black shadow-xl"
+          className="rounded-full bg-green-600 px-6 py-3 text-center font-black text-white shadow-xl transition hover:bg-green-700"
         >
           WhatsApp
         </a>
 
         <a
           href={`tel:${restaurant.phone}`}
-          className="rounded-full border border-yellow-500 bg-black px-6 py-3 text-center font-black text-yellow-500 shadow-xl"
+          className="rounded-full bg-red-600 px-6 py-3 text-center font-black text-white shadow-xl transition hover:bg-red-700"
         >
           Call
         </a>
