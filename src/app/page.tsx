@@ -8,6 +8,8 @@ export default function HomePage() {
     whatsappMessage
   )}`;
 
+  const whiteHeadingClass = "text-4xl font-black text-white md:text-5xl";
+
   return (
     <main className="min-h-screen bg-black text-white">
       <header className="sticky top-0 z-50 border-b border-yellow-500/20 bg-black/95 px-5 py-5 backdrop-blur-xl">
@@ -63,15 +65,19 @@ export default function HomePage() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div>
-            <p className="mb-8 max-w-2xl whitespace-pre-line text-base font-bold leading-8 text-yellow-500">
-              {`Welcome to Belgian Broast
+            <div className="mb-8 max-w-2xl">
+              <h2 className={whiteHeadingClass}>
+                Welcome to Belgian Broast
+              </h2>
 
-At Belgian Broast, we believe great memories begin with great food. We are a peaceful place where families connect, children smile, and everyone feels at home.
+              <p className="mt-5 whitespace-pre-line text-base font-bold leading-8 text-yellow-500">
+                {`At Belgian Broast, we believe great memories begin with great food. We are a peaceful place where families connect, children smile, and everyone feels at home.
 
 Your family’s health is our highest priority. That’s why we prepare our meals fresh every day, using quality ingredients and avoiding processed foods whenever possible. Every dish is made with care, because we serve our guests the same way we would serve our own family.`}
-            </p>
+              </p>
+            </div>
 
-            <h2 className="max-w-full text-5xl font-black leading-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            <h2 className={`${whiteHeadingClass} leading-tight`}>
               Crispy •<br />
               Flavorful •<br />
               Unforgettable
@@ -128,7 +134,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
             <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
               Categories
             </p>
-            <h2 className="mt-3 text-4xl font-black">
+            <h2 className={`mt-3 ${whiteHeadingClass}`}>
               What would you like to order?
             </h2>
           </div>
@@ -168,7 +174,9 @@ Your family’s health is our highest priority. That’s why we prepare our meal
           <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
             Signature Food
           </p>
-          <h2 className="mt-3 text-4xl font-black">Belgian Broast Specials</h2>
+          <h2 className={`mt-3 ${whiteHeadingClass}`}>
+            Belgian Broast Specials
+          </h2>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {signatureItems.slice(0, 3).map((item) => (
@@ -201,7 +209,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
           <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
             Popular Food
           </p>
-          <h2 className="mt-3 text-4xl font-black">Most Loved Items</h2>
+          <h2 className={`mt-3 ${whiteHeadingClass}`}>Most Loved Items</h2>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {popularItems.slice(0, 8).map((item) => (
@@ -233,7 +241,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
           <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
             Restaurant Gallery
           </p>
-          <h2 className="mt-3 text-4xl font-black">
+          <h2 className={`mt-3 ${whiteHeadingClass}`}>
             Ambience, Dining & Food Moments
           </h2>
 
@@ -264,7 +272,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
           <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
             Reviews
           </p>
-          <h2 className="mt-3 text-4xl font-black">Customer Love</h2>
+          <h2 className={`mt-3 ${whiteHeadingClass}`}>Customer Love</h2>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {restaurant.reviews.map((review) => (
@@ -287,7 +295,9 @@ Your family’s health is our highest priority. That’s why we prepare our meal
             <p className="font-bold uppercase tracking-[0.25em] text-yellow-500">
               Location
             </p>
-            <h2 className="mt-3 text-4xl font-black">Visit Belgian Broast</h2>
+            <h2 className={`mt-3 ${whiteHeadingClass}`}>
+              Visit Belgian Broast
+            </h2>
             <p className="mt-4 text-white/60">{restaurant.address}</p>
             <p className="mt-2 text-white/60">Call: {restaurant.phone}</p>
             <p className="mt-2 text-white/60">Email: {restaurant.email}</p>
