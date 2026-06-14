@@ -376,17 +376,46 @@ Your family’s health is our highest priority. That’s why we prepare our meal
                 </Link>
               ))}
             </div>
-          </div>
-
           <div>
-            <h4 className="font-black text-yellow-500">Quick Links</h4>
-            <div className="mt-3 flex flex-col gap-2 text-white/60">
-              <a href="#categories">Menu</a>
-              <a href="#popular">Popular Food</a>
-              <a href="#gallery">Gallery</a>
-              <a href="#location">Location</a>
-            </div>
-          </div>
+  <h4 className="font-black text-yellow-500">Quick Links</h4>
+
+  <div className="mt-3 flex flex-col gap-2 text-white/60">
+    <a href="#categories">Menu</a>
+    <a href="#popular">Popular Food</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#location">Location</a>
+  </div>
+
+  <h4 className="mt-6 font-black text-yellow-500">
+    Follow Us
+  </h4>
+
+  <div className="mt-3 flex flex-col gap-2 text-white/60">
+    <a
+      href="https://www.instagram.com/belgianbroastrampur?igsh=NWR0ZHU5Yno0ajJn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram
+    </a>
+
+    <a
+      href="https://zomato.onelink.me/xqzv/yku3mooy"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Zomato
+    </a>
+
+    <a
+      href="https://www.justdial.com/Rampur/Belgian-Broast-Opposite-Khushboo-Gardenrampur-Nalla-Par-Kalghar/9999P5952-5952-251207101700-Y3Q9_BZDET"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Justdial
+    </a>
+  </div>
+</div>
 
           <div>
             <h4 className="font-black text-yellow-500">Contact</h4>
