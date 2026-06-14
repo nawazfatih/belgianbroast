@@ -350,7 +350,7 @@ Your family’s health is our highest priority. That’s why we prepare our meal
         </a>
       </div>
 
-      <footer className="border-t border-yellow-500/20 bg-black px-5 py-12">
+     <footer className="border-t border-yellow-500/20 bg-black px-5 py-12">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-4">
           <div>
             <img
@@ -376,75 +376,46 @@ Your family’s health is our highest priority. That’s why we prepare our meal
                 </Link>
               ))}
             </div>
+          </div>
+
           <div>
-  <h4 className="font-black text-yellow-500">Quick Links</h4>
+            <h4 className="font-black text-yellow-500">Quick Links</h4>
 
-  <div className="mt-3 flex flex-col gap-2 text-white/60">
-    <a href="#categories">Menu</a>
-    <a href="#popular">Popular Food</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#location">Location</a>
-  </div>
-  <div>
-  <h4 className="font-black text-yellow-500">Follow & Order</h4>
+            <div className="mt-3 flex flex-col gap-2 text-white/60">
+              <a href="#categories">Menu</a>
+              <a href="#popular">Popular Food</a>
+              <a href="#gallery">Gallery</a>
+              <a href="#location">Location</a>
+            </div>
 
-  <div className="mt-3 flex flex-col gap-2">
-    <a
-      href="https://www.instagram.com/belgianbroastrampur?igsh=NWR0ZHU5Yno0ajJn"
-      target="_blank"
-      className="text-pink-500 font-bold hover:text-pink-400"
-    >
-      Instagram
-    </a>
+            <h4 className="mt-6 font-black text-yellow-500">Follow & Order</h4>
 
-    <a
-      href="https://zomato.onelink.me/xqzv/yku3mooy"
-      target="_blank"
-      className="text-red-500 font-bold hover:text-red-400"
-    >
-      Order on Zomato
-    </a>
+            <div className="mt-3 flex flex-col gap-2 text-white/60">
+              <a
+                href="https://www.instagram.com/belgianbroastrampur?igsh=NWR0ZHU5Yno0ajJn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
 
-    <a
-      href="https://www.justdial.com/Rampur/Belgian-Broast-Opposite-Khushboo-Gardenrampur-Nalla-Par-Kalghar/9999P5952-5952-251207101700-Y3Q9_BZDET"
-      target="_blank"
-      className="text-yellow-500 font-bold hover:text-yellow-400"
-    >
-      Justdial Listing
-    </a>
-  </div>
-</div>
+              <a
+                href="https://zomato.onelink.me/xqzv/yku3mooy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Order on Zomato
+              </a>
 
-  <h4 className="mt-6 font-black text-yellow-500">
-    Follow Us
-  </h4>
-
-  <div className="mt-3 flex flex-col gap-2 text-white/60">
-    <a
-      href="https://www.instagram.com/belgianbroastrampur?igsh=NWR0ZHU5Yno0ajJn"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Instagram
-    </a>
-
-    <a
-      href="https://zomato.onelink.me/xqzv/yku3mooy"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Zomato
-    </a>
-
-    <a
-      href="https://www.justdial.com/Rampur/Belgian-Broast-Opposite-Khushboo-Gardenrampur-Nalla-Par-Kalghar/9999P5952-5952-251207101700-Y3Q9_BZDET"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Justdial
-    </a>
-  </div>
-</div>
+              <a
+                href="https://www.justdial.com/Rampur/Belgian-Broast-Opposite-Khushboo-Gardenrampur-Nalla-Par-Kalghar/9999P5952-5952-251207101700-Y3Q9_BZDET"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Justdial Listing
+              </a>
+            </div>
+          </div>
 
           <div>
             <h4 className="font-black text-yellow-500">Contact</h4>
