@@ -46,7 +46,7 @@ export const restaurant = {
       "Belgian Broast Rampur family restaurant serving broast chicken, burgers, pizza, wraps, fries, combos, shakes and beverages.",
     keywords:
       "Belgian Broast Rampur, family restaurant Rampur, broast chicken Rampur, burgers Rampur, pizza Rampur, best restaurant Rampur",
-    siteUrl: "https://belgianbroast.com",
+    siteUrl: "https://www.belgianbroast.com"
   },
 
   heroImage: "/restaurant-images/hero-restaurant.jpg",
