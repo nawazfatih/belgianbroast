@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { restaurant } from "./restaurantData";
+import { blogs } from "./blog/blogData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = restaurant.seo.siteUrl;
@@ -18,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const blogPages = blogs.map((blog) => ({
+    url: `${baseUrl}/blog/${blog.slug}`,
+    lastModified: new Date(blog.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -25,7 +33,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 1,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     ...categoryPages,
     ...menuPages,
+    ...blogPages,
   ];
 }
